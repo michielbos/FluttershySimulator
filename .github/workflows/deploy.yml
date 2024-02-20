@@ -24,4 +24,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: build/js/packages/fluttershy-simulator/kotlin/
-          port: 990
+          port: 21
