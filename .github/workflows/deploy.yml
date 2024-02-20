@@ -23,4 +23,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir: build/js/fluttershy-simulator/kotlin/
+          local-dir: build/js/packages/fluttershy-simulator/kotlin/
