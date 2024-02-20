@@ -1,5 +1,5 @@
 name: Build & Deploy
-
+  /home/michiel/Development/fluttershy-simulator/build/js/packages/fluttershy-simulator/kotlin/
 on:
   push:
     branches: [ "master" ]
@@ -16,3 +16,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
       - name: Build with Gradle
         run: ./gradlew build
+      - name: Deploy to server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: strict
