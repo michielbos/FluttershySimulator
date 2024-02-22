@@ -1,3 +1,5 @@
+package fluttersim
+
 import kotlinx.html.dom.append
 import org.w3c.dom.Node
 import kotlinx.browser.document
@@ -15,10 +17,10 @@ fun main() {
 class Client {
     val gameLog: Node = document.getElementById("gameLog")!!
     val gameInput: HTMLInputElement = document.getElementById("gameInput") as HTMLInputElement
-    val game = Game()
+    val game = Game
 
     init {
-        addGameMessage("You see a Fluttershy.")
+        addGameMessage(game.start())
         gameInput.onkeypress = this::onEnter
     }
 
