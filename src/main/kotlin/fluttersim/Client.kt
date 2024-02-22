@@ -10,6 +10,7 @@ import org.w3c.dom.events.KeyboardEvent
 
 fun main() {
     window.onload = {
+        document.getElementById("subtitle")?.textContent = "Day 1: Game setup"
         Client()
     }
 }
