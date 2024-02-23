@@ -1,6 +1,7 @@
 package fluttersim.actions
 
 import fluttersim.Game
+import fluttersim.gameobjects.Fluttershy
 import fluttersim.gameobjects.GameObject
 import fluttersim.gameobjects.Pony
 
@@ -49,7 +50,11 @@ class FeedAction : GameAction(listOf("feed")) {
 
         if (feedable.isEdible()) {
             Game.removeItemFromWorldOrInventory(feedable)
-            return "You feed the ${feedable.name} to ${target.name}."
+            if (target == Fluttershy) {
+                return "You feed the ${feedable.name} to ${target.name}. She munches on it happily."
+            } else {
+                return "You feed the ${feedable.name} to ${target.name}."
+            }
         } else {
             return "${target.name} won't eat that."
         }

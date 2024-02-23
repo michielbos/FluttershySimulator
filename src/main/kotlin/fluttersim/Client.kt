@@ -5,6 +5,7 @@ import org.w3c.dom.Node
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.html.js.div
+import org.w3c.dom.Element
 import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.events.KeyboardEvent
 
@@ -32,6 +33,9 @@ class Client {
                 addInputMessage(input)
                 val response = game.doInput(input)
                 addGameMessage(response)
+
+                // Ensure we stay at the bottom.
+                (gameLog.lastChild as? Element)?.scrollIntoView()
             }
             gameInput.value = ""
         }
