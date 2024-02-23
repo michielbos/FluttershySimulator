@@ -1,15 +1,21 @@
 package fluttersim
 
-import fluttersim.actions.ExamineAction
-import fluttersim.actions.WhereAction
+import fluttersim.actions.*
+import fluttersim.gameobjects.GameObject
 import fluttersim.places.FluttershyCottage
 
 object Game {
     val currentPlace = FluttershyCottage
+    val inventory = Inventory()
 
     val actions = listOf(
         WhereAction(),
-        ExamineAction()
+        ExamineAction(),
+        TakeAction(),
+        InventoryAction(),
+        EatAction(),
+        FeedAction(),
+        DropAction(),
     )
 
     fun start() : String {
@@ -30,5 +36,14 @@ object Game {
         }
 
         return action.doAction(command, paramString)
+    }
+
+    fun getItemFromWorldOrInventory(name: String): GameObject? {
+        return currentPlace.getGameObjectByName(name)
+            ?: inventory.getItemByName(name)
+    }
+
+    fun removeItemFromWorldOrInventory(gameObject: GameObject): Boolean {
+        return currentPlace.remove(gameObject) || inventory.removeItem(gameObject)
     }
 }

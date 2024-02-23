@@ -8,7 +8,7 @@ class ExamineAction : GameAction(listOf("examine")) {
             return "Examine what?"
         }
 
-        val target = Game.currentPlace.gameObjects.firstOrNull { it.name.lowercase() == paramString }
+        val target = Game.currentPlace.getGameObjectByName(paramString)
 
         if (target == null) {
             return "You don't see any ${paramString}."
