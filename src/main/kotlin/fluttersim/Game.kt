@@ -16,6 +16,7 @@ object Game {
         EatAction(),
         FeedAction(),
         DropAction(),
+        HugAction(),
     )
 
     fun start() : String {

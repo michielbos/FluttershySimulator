@@ -11,7 +11,7 @@ import org.w3c.dom.events.KeyboardEvent
 
 fun main() {
     window.onload = {
-        document.getElementById("subtitle")?.textContent = "Day 2: :waffleshy:"
+        document.getElementById("subtitle")?.textContent = "Day 3: Hugs!"
         Client()
     }
 }

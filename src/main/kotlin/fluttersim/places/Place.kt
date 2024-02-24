@@ -1,6 +1,7 @@
 package fluttersim.places
 
 import fluttersim.gameobjects.GameObject
+import fluttersim.gameobjects.Pony
 
 open class Place(
     val name: String,
@@ -27,4 +28,6 @@ open class Place(
     open fun getEnterMessage() = (enterMessage ?: "You enter ${name}.") + " " + getSeeMessages()
 
     fun getSeeMessages() = gameObjects.joinToString(" ") { it.getSeeMessage() }
+
+    fun getAllPonies() = gameObjects.filterIsInstance<Pony>()
 }
