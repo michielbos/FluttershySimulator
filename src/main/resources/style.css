@@ -9,3 +9,13 @@ html, body {
 .inputMessage {
     color: #44AA88;
 }
+
+target {
+    color: blue;
+    font-weight: 500;
+}
+
+action {
+    color: green;
+    font-weight: 500;
+}

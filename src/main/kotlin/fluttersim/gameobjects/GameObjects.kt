@@ -6,8 +6,8 @@ object Fluttershy : Pony("Fluttershy", "A beautiful shy pegasus.", Gender.Female
 
 class Waffle : Item(
     name = "waffle",
-    description = "A tasty looking waffle. You could eat it or feed it to somepony special.",
-    seeMessage = "There is a plate with a tasty looking waffle on the table.",
+    description = "A tasty looking waffle. You could <action>eat</action> it or <action>feed</action> it to somepony special.",
+    seeMessage = "There is a plate with a tasty looking <target>waffle</target> on the table.",
     pickUpMessage = "You take the waffle from the plate and put it in your inventory.",
     tags = listOf(ObjectTag.Food)
 ) {

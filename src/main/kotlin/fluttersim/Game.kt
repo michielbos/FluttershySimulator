@@ -17,6 +17,8 @@ object Game {
         FeedAction(),
         DropAction(),
         HugAction(),
+        KissAction(),
+        HelpAction()
     )
 
     fun start() : String {

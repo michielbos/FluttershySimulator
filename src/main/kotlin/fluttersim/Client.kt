@@ -11,7 +11,7 @@ import org.w3c.dom.events.KeyboardEvent
 
 fun main() {
     window.onload = {
-        document.getElementById("subtitle")?.textContent = "Day 3: Hugs!"
+        document.getElementById("subtitle")?.textContent = "Day 4: Kiss shy. :flutterblush:"
         Client()
     }
 }
@@ -52,9 +52,8 @@ class Client {
 
     fun addGameMessage(message: String) {
         gameLog.append {
-            div("gameMessage") {
-                +message
-            }
+            val element = div("gameMessage")
+            element.innerHTML = message.replace("\n", "<br>")
         }
     }
 }

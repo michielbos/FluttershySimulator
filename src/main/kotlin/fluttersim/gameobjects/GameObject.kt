@@ -12,7 +12,7 @@ open class GameObject (
 
     open fun getArticledName() = "the $name"
 
-    open fun getSeeMessage() = seeMessage ?: "You see a ${name}."
+    open fun getSeeMessage() = seeMessage ?: "You see a <target>${name}</target>."
 
     open fun getPickUpMessage(): String = pickUpMessage ?: "You can't pick up the ${name}."
 
