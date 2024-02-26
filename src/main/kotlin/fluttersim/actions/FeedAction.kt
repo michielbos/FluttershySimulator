@@ -23,12 +23,12 @@ class FeedAction : GameAction(listOf("feed")) {
             if (split.size == 2) {
                 return "Feed ${feedable.name} to what?"
             }
-            target = Game.currentPlace.getGameObjectByName(split[2])
+            target = Game.getItemFromWorldOrInventory(split[2])
             if (target == null) {
                 return "You don't see any ${split[2]}."
             }
         } else {
-            target = Game.currentPlace.getGameObjectByName(split[0])
+            target = Game.getItemFromWorldOrInventory(split[0])
             if (target == null) {
                 return "You don't see any ${split[0]}"
             }

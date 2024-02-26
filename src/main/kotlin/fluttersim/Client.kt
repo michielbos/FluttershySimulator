@@ -11,7 +11,7 @@ import org.w3c.dom.events.KeyboardEvent
 
 fun main() {
     window.onload = {
-        document.getElementById("subtitle")?.textContent = "Day 4: Kiss shy. :flutterblush:"
+        document.getElementById("subtitle")?.textContent = "Day 5: Portable Fluttershy"
         Client()
     }
 }

@@ -2,7 +2,11 @@ package fluttersim.gameobjects
 
 import fluttersim.Game
 
-object Fluttershy : Pony("Fluttershy", "A beautiful shy pegasus.", Gender.Female)
+object Fluttershy : Pony("Fluttershy", "A beautiful shy pegasus.", Gender.Female) {
+    override fun getDropMessage(): String {
+        return "You gently put $name back on the ground."
+    }
+}
 
 class Waffle : Item(
     name = "waffle",

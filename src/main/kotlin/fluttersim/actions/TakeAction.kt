@@ -1,7 +1,6 @@
 package fluttersim.actions
 
 import fluttersim.Game
-import fluttersim.gameobjects.Item
 
 class TakeAction : GameAction(listOf("take", "pickup")) {
     override fun doAction(command: String, paramString: String): String {
@@ -14,7 +13,7 @@ class TakeAction : GameAction(listOf("take", "pickup")) {
         if (target == null) {
             return "You don't see any ${paramString}."
         }
-        if (target is Item) {
+        if (target.canPickUp()) {
             Game.inventory.addItem(target)
             Game.currentPlace.remove(target)
             return target.getPickUpMessage()

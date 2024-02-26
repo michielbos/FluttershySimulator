@@ -9,12 +9,15 @@ open class Pony(
     tags: List<ObjectTag> = listOf(),
     seeMessage: String? = null,
     pickUpMessage: String? = null
-) : GameObject(name, description, gender, tags, seeMessage, pickUpMessage) {
-    override fun getPickUpMessage(): String = pickUpMessage ?: "$name doesn't want to be picked up."
+) : GameObject(name, description, gender, (tags + listOf(ObjectTag.CanPickUp)).distinct(), seeMessage, pickUpMessage) {
 
     override fun getEatMessage(): String = "$name raises ${gender.possesive} eyebrows at you."
 
     override fun getArticledName() = name
+
+    override fun getDropMessage(): String {
+        return "You put $name back on the ground."
+    }
 
     fun getFrownMessage(): String = when(Random.nextInt(6)) {
         0 -> "$name frowns at you."

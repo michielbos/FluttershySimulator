@@ -1,12 +1,11 @@
 package fluttersim
 
 import fluttersim.gameobjects.GameObject
-import fluttersim.gameobjects.Item
 
 class Inventory {
     val items = mutableListOf<GameObject>()
 
-    fun addItem(item: Item) {
+    fun addItem(item: GameObject) {
         items.add(item)
     }
 

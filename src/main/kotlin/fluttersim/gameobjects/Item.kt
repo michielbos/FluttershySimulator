@@ -8,6 +8,5 @@ open class Item(
     seeMessage: String? = null,
     pickUpMessage: String? = null
 
-) : GameObject(name, description, gender, tags, seeMessage, pickUpMessage) {
-    override fun getPickUpMessage(): String = pickUpMessage ?: "You pick up the $name and put ${gender.objectPronoun} in your inventory."
+) : GameObject(name, description, gender, (tags + listOf(ObjectTag.CanPickUp)).distinct(), seeMessage, pickUpMessage) {
 }
