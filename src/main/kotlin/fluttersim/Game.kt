@@ -18,7 +18,10 @@ object Game {
         DropAction(),
         HugAction(),
         KissAction(),
-        HelpAction()
+        HelpAction(),
+        CleanAction(),
+        SleepAction(),
+        JumpAction(),
     )
 
     fun start() : String {
@@ -38,7 +41,7 @@ object Game {
             return "You don't know how to ${command}."
         }
 
-        return action.doAction(command, paramString)
+        return action.doAction(command, paramString).replaceFirstChar { it.titlecase() }
     }
 
     fun getItemFromWorldOrInventory(name: String): GameObject? {

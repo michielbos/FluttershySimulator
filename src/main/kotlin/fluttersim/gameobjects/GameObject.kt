@@ -4,6 +4,7 @@ open class GameObject (
     val name: String,
     val description: String,
     val gender: Gender = Gender.Object,
+    val aliases: List<String> = listOf(),
     val tags: List<ObjectTag> = listOf(),
     val seeMessage: String? = null,
     val pickUpMessage: String? = null

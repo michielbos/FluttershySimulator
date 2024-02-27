@@ -15,6 +15,8 @@ class Inventory {
 
     fun getItemByName(name: String): GameObject? {
         val lowerName = name.lowercase()
+        // Check the aliases separately, since multiple objects could have the same alias.
         return items.firstOrNull { it.name.lowercase() == lowerName }
+            ?: items.firstOrNull { it.aliases.contains(lowerName) }
     }
 }

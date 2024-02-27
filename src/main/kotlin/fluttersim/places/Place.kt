@@ -20,7 +20,9 @@ open class Place(
 
     fun getGameObjectByName(name: String): GameObject? {
         val lowerName = name.lowercase()
+        // Check the aliases separately, since multiple objects could have the same alias.
         return gameObjects.firstOrNull { it.name.lowercase() == lowerName }
+            ?: gameObjects.firstOrNull { it.aliases.contains(lowerName) }
     }
 
     open fun getWhereMessage() = (whereMessage ?: "You are in ${name}.") + " " + getSeeMessages()
