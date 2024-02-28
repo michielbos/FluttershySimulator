@@ -74,7 +74,7 @@ object PonyvilleSquare : Place("Ponyville Square", enterMessage = "You enter Pon
         add(MessageOnly("You can go <target>north</target>, <target>west</target>, <target>south</target> or <target>east</target> to explore the rest of Ponyville."))
         add(
             PlaceLink(
-                "north ponyville",
+                "North Ponyville",
                 "The north side of Ponyville.",
                 NorthPonyville,
                 aliases = listOf("north"),
@@ -84,7 +84,7 @@ object PonyvilleSquare : Place("Ponyville Square", enterMessage = "You enter Pon
         )
         add(
             PlaceLink(
-                "west ponyville",
+                "West Ponyville",
                 "The west side of Ponyville.",
                 WestPonyville,
                 aliases = listOf("west"),
@@ -94,7 +94,7 @@ object PonyvilleSquare : Place("Ponyville Square", enterMessage = "You enter Pon
         )
         add(
             PlaceLink(
-                "south ponyville",
+                "South Ponyville",
                 "The south side of Ponyville.",
                 SouthPonyville,
                 aliases = listOf("south"),
@@ -104,7 +104,7 @@ object PonyvilleSquare : Place("Ponyville Square", enterMessage = "You enter Pon
         )
         add(
             PlaceLink(
-                "east ponyville",
+                "East Ponyville",
                 "The east side of Ponyville.",
                 EastPonyville,
                 aliases = listOf("east"),

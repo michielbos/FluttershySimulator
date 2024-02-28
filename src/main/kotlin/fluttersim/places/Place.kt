@@ -2,12 +2,14 @@ package fluttersim.places
 
 import fluttersim.gameobjects.GameObject
 import fluttersim.gameobjects.ObjectTag
+import fluttersim.gameobjects.PlaceLink
 import fluttersim.gameobjects.Pony
 
 open class Place(
     val name: String,
     val whereMessage: String? = null,
     val enterMessage: String? = null,
+    val leaveTarget: PlaceLink? = null
 ) {
     val gameObjects: MutableList<GameObject> = mutableListOf()
 

@@ -24,6 +24,7 @@ object Game {
         SleepAction(),
         JumpAction(),
         EnterAction(),
+        LeaveAction()
     )
 
     fun start() : String {
