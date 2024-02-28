@@ -1,5 +1,5 @@
 package fluttersim.gameobjects
 
 enum class ObjectTag {
-    CanPickUp, Food
+    CanPickUp, Food, HideSeeMessage
 }

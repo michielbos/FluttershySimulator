@@ -14,6 +14,7 @@ class TakeAction : GameAction(listOf("take", "pickup")) {
             return "You don't see any ${paramString}."
         }
         if (target.canPickUp()) {
+            target.isInOriginalPlace = false
             Game.inventory.addItem(target)
             Game.currentPlace.remove(target)
             return target.getPickUpMessage()

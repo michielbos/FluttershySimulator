@@ -3,9 +3,10 @@ package fluttersim
 import fluttersim.actions.*
 import fluttersim.gameobjects.GameObject
 import fluttersim.places.FluttershyCottage
+import fluttersim.places.Place
 
 object Game {
-    val currentPlace = FluttershyCottage
+    var currentPlace: Place = FluttershyCottage
     val inventory = Inventory()
 
     val actions = listOf(
@@ -22,6 +23,7 @@ object Game {
         CleanAction(),
         SleepAction(),
         JumpAction(),
+        EnterAction(),
     )
 
     fun start() : String {

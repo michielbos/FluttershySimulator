@@ -7,7 +7,8 @@ open class GameObject (
     val aliases: List<String> = listOf(),
     val tags: List<ObjectTag> = listOf(),
     val seeMessage: String? = null,
-    val pickUpMessage: String? = null
+    val pickUpMessage: String? = null,
+    var isInOriginalPlace: Boolean = true,
 ) {
     open fun getDescription() = description
 
